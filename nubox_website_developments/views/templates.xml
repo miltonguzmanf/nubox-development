@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_frontend" inherit_id="website.assets_frontend">
+        <xpath expr="link[last()]" position="after">
+            <link rel="stylesheet" type="text/scss" href="/nubox_website_developments/static/src/scss/nubox.scss"/>
+        </xpath>
+    </template>
+    <template id="services_template">
+        <t t-call="website.layout">
+            <div class="container-md row justify-content-md-center cn-mrg">
+                <div class="containergeneral ">
+                    <div class="containerproducts">
+                    <h2 class="title-select">Selecciona el o los sistemas a contratar</h2>
+                            <div class="containerproduct">
+                                <t t-as="product" t-foreach="product_template_ids">
+                                    <div class="form-check product">
+                                        <input class="check-product" type="checkbox" value="" id="flexCheckDefault"/>
+                                        <img t-att-src="'data:image/png;base64,%s' % to_text(product.image_1920)" alt="" class="icon-products"/>
+                                        <div class="container-selection-product">
+                                            <span t-esc="product.name" class="form-check-label" for="flexCheckDefault"/>
+                                            <div class="">
+                                            <select name="" id="" class="select-plane">
+                                                <option value="">En Marcha Plan 50 ($ 26.444 - UF 0,89)</option>
+                                                <option value="">En Marcha Plan 100 ($ 39.518 - UF 1,33)</option>
+                                                <option value="">En Marcha Plan 250 ($ 53.186 - UF 1,79)</option>
+                                                <option value="">En Marcha Plan 300 ($ 63.883 - UF 2,15)</option>
+                                                <option value="">En Marcha Plan 500 ($ 84.979 - UF 2,86)</option>
+                                            </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+                            <div class="containertotal">
+                            <h2 class="title-select">Total sistema a contratar</h2>
+                                <div class="totales">
+                                    <span class="total-UF">UF 12.2</span>
+                                    <span class="total-pesos">$1520</span>
+                                    <span class="value-UF-periodo">*Valor UF: $1854.2</span>
+                                </div>
+                            </div>
+                    <div class="container-detail-product-fe" id="detalle_producto-fe">
+                    <div class="detail-product-fe">
+                        <span class="name-product">Factura Electrónica - En Marcha Plan 100</span>
+                        <span class="description-product">Incluye hasta 10000 documentos tributarios mensuales emitidos. Valor del documento adicional UF 0,0027.</span>
+                        <span class="value-plan">Valor plan: $39.518 - UF 1,33</span>
+                    </div>
+                    </div>
+                     <div class="container-detail-product-co" id="detalle_producto-co">
+                        <div class="detail-product-co">
+                            <span class="name-product">Factura Electrónica - En Marcha Plan 100</span>
+                            <span class="description-product">Incluye hasta 10000 documentos tributarios mensuales emitidos. Valor del documento adicional UF 0,0027.</span>
+                            <span class="value-plan">Valor plan: $39.518 - UF 1,33</span>
+                        </div>
+                        </div>
+                     <div class="container-detail-product-re" id="detalle_producto-re">
+                        <div class="detail-product-re">
+                            <span class="name-product">Factura Electrónica - En Marcha Plan 100</span>
+                            <span class="description-product">Incluye hasta 10000 documentos tributarios mensuales emitidos. Valor del documento adicional UF 0,0027.</span>
+                            <span class="value-plan">Valor plan: $39.518 - UF 1,33</span>
+                        </div>
+                    </div>
+                    <div class="button-sig">
+                        <a class="btn-next" type="button">SIGUIENTE</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    <script type="text/javascript" src="/nubox_website_developments/static/src/js/box_info.js"></script>
+    </template>
+</odoo>
